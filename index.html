@@ -280,6 +280,26 @@
       .button-group { flex-direction: column; }
       .btn { width: 100%; text-align: center; }
     }
+    /* Автоматический водяной знак с логотипом */
+.card-image {
+  position: relative;
+}
+
+.card-image::after {
+  content: "";
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  width: 48px;
+  height: 48px;
+  background-image: url("logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.75;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
   </style>
   <script type="application/ld+json">
 {
