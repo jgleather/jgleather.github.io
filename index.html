@@ -58,3 +58,495 @@
       overflow: hidden;
       border: 2px solid var(--accent);
       margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    }
+
+    .avatar-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .hero .tagline {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .hero .credentials {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+    }
+
+    /* Sections Shared Styling */
+    section {
+      margin-bottom: 50px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      margin-bottom: 24px;
+      border-left: 3px solid var(--accent);
+      padding-left: 14px;
+    }
+
+    /* Statement Block */
+    .statement-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 30px;
+      border-radius: 4px;
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    .statement-card p {
+      margin-bottom: 16px;
+    }
+
+    .statement-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Timeline Section */
+    .timeline {
+      position: relative;
+      border-left: 1px solid var(--border);
+      margin-left: 10px;
+      padding-left: 25px;
+      margin-bottom: 50px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -31px;
+      top: 4px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background-color: var(--accent);
+      border: 2px solid var(--bg-color);
+    }
+
+    .timeline-year {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .timeline-content h3 {
+      font-size: 1.05rem;
+      color: #fff;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    .timeline-content p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Portfolio Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+
+    /* Автоматический водяной знак с логотипом */
+    .card-image {
+      position: relative;
+      display: block;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      cursor: zoom-in;
+    }
+
+    .card-image::after {
+      content: "";
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      width: 48px;
+      height: 48px;
+      background-image: url("logo.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.8;
+      pointer-events: none;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .gallery-info {
+      padding: 16px;
+    }
+
+    .gallery-info h4 {
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .gallery-info p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Lightbox Popup */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      cursor: zoom-out;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 92%;
+      max-height: 90vh;
+      object-fit: contain;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.75);
+      cursor: default;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      color: var(--text-main);
+      font-size: 2.2rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      user-select: none;
+    }
+
+    .lightbox-close:hover {
+      color: var(--accent);
+    }
+
+    /* Contact & Links Bar */
+    .contact-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 30px;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      border-radius: 3px;
+      font-weight: 500;
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #121212;
+      border: 1px solid var(--accent);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-dark);
+      border-color: var(--accent-dark);
+      color: #fff;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.8rem;
+      color: #666;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.2rem; }
+      .statement-card { padding: 20px; }
+      .button-group { flex-direction: column; }
+      .btn { width: 100%; text-align: center; }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "JG Leather",
+  "url": "https://jgleather.lv",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Riga",
+    "addressCountry": "LV"
+  },
+  "description": "Ādas izstrādājumu izgatavošana pēc pasūtījuma un somu restaurācija Rīgā. Пошив изделий из кожи на заказ и реставрация сумок в Риге. Bespoke leathercraft and luxury bag restoration in Riga.",
+  "knowsLanguage": ["lv", "ru", "en"],
+  "keywords": "ādas izstrādājumi, somu remonts Rīga, ādas jostas, изделия из кожи, реставрация сумок Рига, bespoke leathercraft, bag restoration Riga"
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+    
+    <!-- Hero / Header -->
+    <header class="hero">
+      <div class="avatar-wrapper">
+        <img src="avatar.jpg" alt="Jaroslavs Gavars">
+      </div>
+      <h1>JAROSLAVS GAVARS</h1>
+      <div class="tagline">JG Leather &bull; Bespoke Leathercraft</div>
+      <div class="credentials">
+        Riga, Latvia &bull; Certified Artisan
+      </div>
+    </header>
+
+    <!-- Artisan Statement -->
+    <section>
+      <h2 class="section-title">Artisan Statement</h2>
+      <div class="statement-card">
+        <p>
+          I craft leather goods grounded in architectural durability, structural integrity, and uncompromising artisanal standards. My approach combines industrial machinery precision with meticulous bench detailing — from reinforced stress joints to dense, glass-smooth edge finishing.
+        </p>
+        <p>
+          Each piece is engineered for generational longevity: premium vegetable-tanned hides, supple lambskin, and bridle grades selected for aging character, assembled to maintain form and poise across decades of use.
+        </p>
+      </div>
+    </section>
+
+    <!-- Timeline / Track Record -->
+    <section>
+      <h2 class="section-title">Experience & Milestones</h2>
+      <div class="timeline">
+        
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2021 — PRESENT</div>
+          <div class="timeline-content">
+            <h3>Founder & Master Craftsman &bull; JG Leather</h3>
+            <p>Officially registered independent artisan brand (NACE 1512). Complex pattern drafting from scratch, bespoke structural commissions, and small-batch production of luxury travel and lifestyle goods.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2022 — PRESENT</div>
+          <div class="timeline-content">
+            <h3>Upholstery & Ergonomic Seating Restoration</h3>
+            <p>Professional training and execution of fine upholstery: structural restoration, leather tensioning, and bespoke re-trimming of ergonomic office seating and executive furniture.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2014 — PRESENT</div>
+          <div class="timeline-content">
+            <h3>Bespoke Leathercraft, Traditional Hand Stitching & Pattern Making</h3>
+            <p>Over a decade of dedicated leathercraft practice: geometric pattern drafting from raw concept, traditional two-needle saddle stitching, and fine edge finishing. Expert integration of manual benchwork with specialized heavy-duty industrial machinery for structural durability.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2014 — 2023</div>
+          <div class="timeline-content">
+            <h3>Industrial Heavy Stitching & Marine Fabrication</h3>
+            <p>Practical mastery of heavy-duty industrial sewing under extreme durability standards: manufacturing certified heavy lifting slings, custom canvas covers for lifeboats, fast rescue crafts (FRC), winches, and marine equipment. Confident handling of vast acreage of heavy canvas, heavy sailcloth, high-tensile webbing, and load-bearing hardware.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    
+    <!-- Portfolio Gallery -->
+    <section style="margin-top: 60px;">
+      <h2 class="section-title">Selected Works</h2>
+      <div class="gallery-grid">
+        
+        <div class="gallery-item">
+          <div class="card-image">
+            <img src="work-1.jpg" alt="Artisan Leather Toiletry Bag">
+          </div>
+          <div class="gallery-info">
+            <h4>Bespoke Toiletry Bag / Dopp Kit</h4>
+            <p>Deep green supple lambskin, rich suede lining, dual-zip access, ergonomic grab handle, and custom embossed maker's mark.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="card-image">
+            <img src="work-2.jpg" alt="Artisan Shoulder Tote">
+          </div>
+          <div class="gallery-info">
+            <h4>Bespoke Shoulder Shopper</h4>
+            <p>Supple full-grain leather, ergonomic shoulder strap, and generous everyday capacity.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="card-image">
+            <img src="work-3.jpg" alt="Leather Sling / Bodypack">
+          </div>
+          <div class="gallery-info">
+            <h4>Ergonomic Leather Sling</h4>
+            <p>Heavy-duty construction, calibrated load-bearing strap, and practical utility.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section>
+      <h2 class="section-title">Inquiries & Contact</h2>
+      <div class="contact-card">
+        <p style="color: #fff; font-size: 1.1rem; margin-bottom: 8px;">Direct Commissions & Inquiries</p>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          Riga, Latvia &bull; Open for bespoke projects and international delivery.
+        </p>
+        
+        <div class="button-group">
+          <a href="https://www.instagram.com/jg_leather/" target="_blank" class="btn btn-primary">Instagram Portfolio</a>
+          <a href="mailto:jaroslav.gavars@gmail.com" class="btn btn-outline">Send Email</a>
+          <a href="https://wa.me/37120307655" target="_blank" class="btn btn-outline">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width: 800px; margin: 40px auto; padding: 20px; font-size: 0.95rem; line-height: 1.6;">
+      <h2>Pakalpojumi Rīgā / Услуги в Риге / Services</h2>
+      <p><strong>LV:</strong> Individuālā somu šūšana un ādas izstrādājumu izgatavošana pēc pasūtījuma (somas, jostas, maki, aksesuāri). Profesionāls somu remonts un luksusa ādas somu restaurācija Rīgā.</p>
+      <p><strong>RU:</strong> Индивидуальный пошив сумок и изготовление изделий из натуральной кожи на заказ (сумки, ремни, кошельки). Ремонт и реставрация кожаных сумок в Риге.</p>
+      <p><strong>EN:</strong> Bespoke leathercraft, custom leather bags and accessories, luxury leather bag repair and restoration in Riga, Latvia.</p>
+    </section>
+
+    <footer class="footer">
+      &copy; 2026 JG Leather. All rights reserved.
+    </footer>
+
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <span class="lightbox-close" aria-label="Close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.querySelector('.lightbox-close');
+
+    document.querySelectorAll('.card-image img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.dataset.full || img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.src = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+  </script>
+
+</body>
+</html>
+```[cite: 4]
+
+Everything works automatically with your existing `work-1.jpg`, `work-2.jpg`, and `work-3.jpg` files[cite: 4]. If you later add separate high-res versions, just add `data-full="work-1-full.jpg"` to any `<img>` tag and it will open that file instead.
